@@ -1,2 +1,2 @@
 # Gait-Recog
-It is the project of gait rec0g using GEI
+It is the project of gait recog using GEI
