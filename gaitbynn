@@ -1,0 +1,40 @@
+import tensorflow
+import keras
+#from keras import layers
+from keras.layers import Input, Dense, Activation, ZeroPadding2D, BatchNormalization, Flatten, Conv2D
+from keras.layers import AveragePooling2D, MaxPooling2D, Dropout, GlobalMaxPooling2D, GlobalAveragePooling2D
+from keras.models import Model as model
+from keras.models import Sequential
+from keras.preprocessing import image
+from keras.utils import layer_utils
+from keras.utils.data_utils import get_file
+from keras.applications.imagenet_utils import preprocess_input
+
+from IPython.display import SVG
+from keras.utils.vis_utils import model_to_dot
+from keras.utils import plot_model
+
+import keras.backend as K
+K.set_image_data_format('channels_last')
+import matplotlib.pyplot as plt
+from matplotlib.pyplot import imshow
+
+#y_train=np.array(y1,dtype='float64')
+#y_test=np.array(y_test,dtype='float64')
+#y_train = keras.utils.to_categorical(y1, num_classes=305,dtype='float64')
+#y_test = keras.utils.to_categorical(y_test, num_classes=305,dtype='float64')
+model=Sequential()
+model.add(Conv2D(2,(5,5),strides=(2,2),activation='relu',input_shape=(200,200,1)))
+
+model.add(MaxPooling2D(pool_size=(2,2)))
+model.add(Conv2D(5,(3,3),strides=(1,1),activation='relu'))
+model.add(ZeroPadding2D(padding=(1,1)))
+model.add(MaxPooling2D(pool_size=(2,2)))
+model.add(Conv2D(16,(3,3),strides=(1,1),activation='relu'))
+model.add(MaxPooling2D(pool_size=(2,2)))
+
+model.add(Flatten())
+model.add(Dense(500,activation='relu'))
+
+#model.compile(optimizer='adam',loss='categorical_crossentropy',metrics=['accuracy'])
+#model.fit(x_train,y_train,batch_size=50,epochs=30,verbose=1)
