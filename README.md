@@ -1,4 +1,4 @@
-# Gait-Recog
+# Gait-Recognition
 It is the project of gait recognition
 Human recognition methods , such as fingerprints,face,or iris biometric
 modalities,generally reguire a cooperative subject, views from certain aspects,and physical contact or close proximity
