@@ -29,3 +29,4 @@ Different Classifier are used to get the better accuracy with tuning the paramet
 Decision Tree classifier,Linear SVC ,Logistic Regression and few more..And finally we
 got 95% test accuracy and 100% train accuracy in Logistic at C=0.01 with lbfgs solver
 and max_iter=250.
+
